@@ -1,0 +1,20 @@
+﻿@model ClassDemo.Models.ActorDetailsViewModel
+
+@{
+    ViewData["Title"] = "Actor Details";
+}
+
+<h1>Actor Details</h1>
+<p><strong>Name:</strong> @Model.Actor.Name</p>
+<p><strong>Gender:</strong> @Model.Actor.Gender</p>
+<p><strong>Age:</strong> @Model.Actor.Age</p>
+<p><strong>IMDB Link:</strong> <a href="@Model.Actor.IMDBLink" target="_blank">@Model.Actor.IMDBLink</a></p>
+<p><strong>Photo:</strong> <img src="@Url.Action("GetActorPhoto", "Actor", new { id = Model.Actor.Id })" alt="@Model.Actor.Name Photo" style="max-width:200px;" /></p>
+
+<h2>Movies Featuring This Actor</h2>
+<ul>
+    @foreach (var movie in Model.Movies)
+    {
+        <li>@movie.Title</li>
+    }
+</ul>

@@ -1,0 +1,55 @@
+﻿@model ClassDemo.Models.Actor
+
+@{
+    ViewData["Title"] = "Edit Actor";
+}
+
+<h1>Edit Actor</h1>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" asp-route-id="@Model.Id" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender"></label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IMDBLink"></label>
+                <input asp-for="IMDBLink" class="form-control" />
+                <span asp-validation-for="IMDBLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="currentPhoto">Current Photo</label><br />
+                @if (Model.Photo != null)
+                {
+                    <img src="@Url.Action("GetActorPhoto", "Actor", new { id = Model.Id })" alt="Actor Photo" style="max-width:150px;" />
+                }
+                else
+                {
+                    <p>No photo available.</p>
+                }
+            </div>
+            <div class="form-group">
+                <label for="photo">Upload New Photo</label>
+                <input type="file" name="photo" class="form-control" />
+            </div>
+            <input type="submit" value="Save Changes" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+<a asp-action="Index">Back to List</a>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

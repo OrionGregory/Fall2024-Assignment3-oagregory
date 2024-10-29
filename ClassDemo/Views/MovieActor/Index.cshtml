@@ -1,0 +1,39 @@
+@model IEnumerable<ClassDemo.Models.MovieActor>
+
+@{
+    ViewData["Title"] = "Movie-Actor Links";
+}
+
+<h1>Movie-Actor Links</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Link</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Actor</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-controller="Movie" asp-route-id="@item.MovieId">@item.Movie.Title</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-controller="Actor" asp-route-id="@item.ActorId">@item.Actor.Name</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
