@@ -1,6 +1,7 @@
 C:\Users\orion\Source\Repos\Fall2024-Assignment3-oagregory\ClassDemo\obj\Release\net8.0\PubTmp\Out\Assignment3.exe
 C:\Users\orion\Source\Repos\Fall2024-Assignment3-oagregory\ClassDemo\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
 C:\Users\orion\Source\Repos\Fall2024-Assignment3-oagregory\ClassDemo\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\orion\Source\Repos\Fall2024-Assignment3-oagregory\ClassDemo\obj\Release\net8.0\PubTmp\Out\appsettings.Production.json
 C:\Users\orion\Source\Repos\Fall2024-Assignment3-oagregory\ClassDemo\obj\Release\net8.0\PubTmp\Out\Assignment3.dll
 C:\Users\orion\Source\Repos\Fall2024-Assignment3-oagregory\ClassDemo\obj\Release\net8.0\PubTmp\Out\Assignment3.runtimeconfig.json
 C:\Users\orion\Source\Repos\Fall2024-Assignment3-oagregory\ClassDemo\obj\Release\net8.0\PubTmp\Out\Assignment3.pdb
