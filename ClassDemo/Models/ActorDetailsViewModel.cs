@@ -1,16 +1,14 @@
-﻿namespace ClassDemo.Models
+﻿using ClassDemo.Models;
+// Models/ActorDetailsViewModel.cs
+using System.Collections.Generic;
+
+namespace ClassDemo.Models
 {
     public class ActorDetailsViewModel
     {
         public Actor Actor { get; set; }
         public List<Movie> Movies { get; set; }
-
-        public ActorDetailsViewModel() { }
-
-        public ActorDetailsViewModel(Actor actor, List<Movie> movies)
-        {
-            Actor = actor;
-            Movies = movies;
-        }
+        public List<ActorTweet> TweetSentiments { get; set; }
+        public string OverallSentiment { get; set; }
     }
 }

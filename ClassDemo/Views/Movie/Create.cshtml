@@ -1,35 +1,50 @@
 @model ClassDemo.Models.Movie
 
-@{
-    ViewData["Title"] = "Create Movie";
-}
+<h1>@Model.Title</h1>
 
-<h1>Create Movie</h1>
 <div class="row">
     <div class="col-md-6">
-        <form asp-action="Create">
-            <div class="form-group">
-                <label asp-for="Title"></label>
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">Title</label>
                 <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="IMDBLink"></label>
+
+            <div class="mb-3">
+                <label asp-for="IMDBLink" class="form-label">IMDB Link</label>
                 <input asp-for="IMDBLink" class="form-control" />
+                <span asp-validation-for="IMDBLink" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Genre"></label>
+
+            <div class="mb-3">
+                <label asp-for="Genre" class="form-label">Genre</label>
                 <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Year"></label>
+
+            <div class="mb-3">
+                <label asp-for="Year" class="form-label">Year</label>
                 <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Poster"></label>
+
+            <div class="mb-3">
+                <label asp-for="Poster" class="form-label">Poster URL</label>
                 <input asp-for="Poster" class="form-control" />
+                <span asp-validation-for="Poster" class="text-danger"></span>
             </div>
-            <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
         </form>
     </div>
 </div>
-<a asp-action="Index">Back to List</a>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

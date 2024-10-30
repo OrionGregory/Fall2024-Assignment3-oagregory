@@ -1,21 +1,52 @@
 @model ClassDemo.Models.Movie
 
-@{
-    ViewData["Title"] = "Edit Movie";
-}
+<h1>Edit @Model.Title</h1>
 
-<h1>Edit Movie</h1>
 <div class="row">
     <div class="col-md-6">
-        <form asp-action="Edit">
+        <form asp-action="Edit" method="post">
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Title"></label>
+
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">Title</label>
                 <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
             </div>
-            <!-- Other fields follow the same pattern -->
-            <input type="submit" value="Save" class="btn btn-primary" />
+
+            <div class="mb-3">
+                <label asp-for="IMDBLink" class="form-label">IMDB Link</label>
+                <input asp-for="IMDBLink" class="form-control" />
+                <span asp-validation-for="IMDBLink" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Genre" class="form-label">Genre</label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Year" class="form-label">Year</label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Poster" class="form-label">Poster URL</label>
+                <input asp-for="Poster" class="form-control" />
+                <span asp-validation-for="Poster" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
         </form>
     </div>
 </div>
-<a asp-action="Index">Back to List</a>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
